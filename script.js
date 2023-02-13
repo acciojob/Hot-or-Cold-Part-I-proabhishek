@@ -7,6 +7,7 @@ var inputValue = document.getElementById("guess").value;
 
 function checkGame () {
 	var diff = Number(inputValue) - Number(numPtag.value);
+	alert(inputValue + " " +  numPtag.value);
 	if(Math.abs(diff) <= 5) {
 	res.textContent = "Hot";
 	}
@@ -14,8 +15,6 @@ function checkGame () {
 		res.textContent = "cold";
 	}
 }
-
-checkGame();
 
 function generateRandomNumber() {
     var no = Math.floor(Math.random() * 54) - 14;
