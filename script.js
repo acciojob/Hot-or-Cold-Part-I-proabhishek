@@ -5,21 +5,22 @@ var res = document.getElementById("respond");
 var inputValue = document.getElementById("guess").value;
 
 
-function checkGame () {
-	var diff = Number(inputValue) - Number(numPtag.value);
-	alert(inputValue + " " +  numPtag.value);
-	if(Math.abs(diff) <= 5) {
-	res.textContent = "Hot";
-	}
-	else {
-		res.textContent = "cold";
-	}
+function randomNumGenerator() {
+  randomNum = Math.floor(Math.random() * 41) - 20;
+  document.getElementById("num").innerText = randomNum;
+  guessNum();
+  print();
 }
 
-function generateRandomNumber() {
-    var no = Math.floor(Math.random() * 54) - 14;
-	numPtag.textContent = no;
-	checkGame();
+function guessNum() {
+  input = Number(document.getElementById("guess").value);
+}
+function print() {
+  if (Math.abs(randomNum - input) <= 5) {
+    document.getElementById("respond").innerText = "Hot";
+  } else {
+    document.getElementById("respond").innerHTML = "Cold";
+  }
 }
 
-btn.addEventListener("click", generateRandomNumber);
+btn.addEventListener("click", randomNumGenerator);
