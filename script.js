@@ -5,7 +5,7 @@ var res = document.getElementById("respond");
 var inputValue = document.getElementById("guess").value;
 var diff = Number(inputValue) - Number(numPtag.value);
 
-if(Math.abs(diff) === 5) {
+if(Math.abs(diff) <= 5) {
 	res.textContent = "Hot";
 }
 else {
